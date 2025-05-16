@@ -39,7 +39,7 @@ export function ReviewTips({ reviewData }) {
       
       <View className="mt-4 pt-4 border-t border-neutral-100">
         <Text className="text-lg font-semibold text-primary-800 mb-3">
-          Foods to Add to Your Diet
+          Foods to Add to Your Diet Basing On Recomendations
         </Text>
         
         <View className="flex-row flex-wrap">

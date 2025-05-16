@@ -57,6 +57,9 @@ export function CustomTabBar({ state, descriptors, navigation }) {
           case 'AiReviewer':
             iconName = isFocused ? 'analytics' : 'analytics-outline';
             break;
+          case 'QuizPage':
+            iconName = isFocused ? 'help-circle' : 'help-circle-outline';
+            break;
           default:
             iconName = isFocused ? 'apps' : 'apps-outline';
         }

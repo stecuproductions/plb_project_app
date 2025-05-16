@@ -3,6 +3,7 @@ import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import '../global.css';
 
+export const API_URL = 'http://localhost:3000'; 
 
 export default function RootLayout() {
   const [fontsLoaded] = useFonts({

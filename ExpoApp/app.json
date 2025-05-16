@@ -21,7 +21,10 @@
     },
     "web": {
       "bundler": "metro",
-      "output": "static",
+      "output": "static"
+    },
+    "extra": {
+      "apiUrl": "http://localhost:3000"
     },
     "plugins": [
       "expo-router",

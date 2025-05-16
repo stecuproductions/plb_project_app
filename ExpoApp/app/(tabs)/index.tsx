@@ -40,6 +40,13 @@ export default function HomeScreen() {
               description="Discover new content" 
               customClassName="w-[48%] mb-4" 
             />
+            <NavigationCard 
+              title="Ai diet reviewer" 
+              description="Get feedback on your diet using modern AI technology" 
+              customClassName="w-full mb-4" 
+              icon = "🤖"
+
+            />
             
           </View>
         </View>

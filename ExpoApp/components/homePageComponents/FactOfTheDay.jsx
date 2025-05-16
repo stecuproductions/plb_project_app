@@ -40,7 +40,7 @@ export function FactOfTheDay() {
         {fact.title}
       </Text>
       <Text className="text-neutral-700 mb-4">{fact.description}</Text>
-      <View className="flex-row items-center justify-between">
+      <View className="flex-row items-center flex-wrap justify-between">
         <Text className="text-neutral-500 text-xs">Source: {fact.source}</Text>
         <Button
           variant="primary"

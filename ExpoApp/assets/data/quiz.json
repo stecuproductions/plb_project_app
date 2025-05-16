@@ -1,0 +1,177 @@
+{
+  "quiz": {
+    "title": "Healthy Lifestyle Quiz",
+    "rounds": [
+      {
+        "id": "nutrition-101",
+        "name": "Nutrition",
+        "category": "Diet & Nutrition",
+        "description": "Test your knowledge about healthy eating and nutritional facts",
+        "difficulty": "easy",
+        "imageKey": "nutrition",
+        "questions": [
+          {
+            "question": "What is a balanced diet?",
+            "options": [
+              "Only eating vegetables and fruits",
+              "Eating a variety of foods from all food groups",
+              "Avoiding all fats and sugars",
+              "Drinking only water and protein shakes"
+            ],
+            "correctAnswer": "Eating a variety of foods from all food groups",
+            "explanation": "A balanced diet includes foods from all major food groups: proteins, carbohydrates, fats, vitamins, and minerals.",
+            "source": "https://www.who.int/publications/balanced-diet-guidelines"
+          },
+          {
+            "question": "Which nutrient is essential for muscle growth?",
+            "options": [
+              "Carbohydrates",
+              "Protein",
+              "Fats",
+              "Vitamins"
+            ],
+            "correctAnswer": "Protein",
+            "explanation": "Proteins provide the building blocks for muscle repair and growth.",
+            "source": "https://www.nhs.uk/live-well/eat-well/understanding-protein/"
+          }
+        ]
+      },
+      {
+        "id": "superfoods-101",
+        "name": "Superfoods",
+        "category": "Diet & Nutrition",
+        "description": "Explore nutrient-dense foods and their benefits",
+        "difficulty": "medium",
+        "imageKey": "superfoods",
+        "questions": [
+          {
+            "question": "Which of these is often considered a superfood?",
+            "options": [
+              "White bread",
+              "Kale",
+              "Potato chips",
+              "Processed cheese"
+            ],
+            "correctAnswer": "Kale",
+            "explanation": "Kale is rich in vitamins A, C, and K, and is considered a nutrient-dense superfood.",
+            "source": "https://www.healthline.com/nutrition/10-super-healthy-superfoods"
+          },
+          {
+            "question": "Why are berries considered healthy?",
+            "options": [
+              "They contain high amounts of sugar",
+              "They are low in fiber",
+              "They are rich in antioxidants",
+              "They replace meals"
+            ],
+            "correctAnswer": "They are rich in antioxidants",
+            "explanation": "Berries are loaded with antioxidants which help protect your cells from damage.",
+            "source": "https://www.medicalnewstoday.com/articles/287710"
+          }
+        ]
+      },
+      {
+        "id": "hydration-101",
+        "name": "Hydration",
+        "category": "Diet & Nutrition",
+        "description": "Check your knowledge about water intake and hydration",
+        "difficulty": "easy",
+        "imageKey": "water",
+        "questions": [
+          {
+            "question": "How much water should an average adult drink per day?",
+            "options": [
+              "1 glass",
+              "2 liters (8 cups)",
+              "5 liters",
+              "Only during meals"
+            ],
+            "correctAnswer": "2 liters (8 cups)",
+            "explanation": "The general recommendation is around 2 liters (or 8 cups) of water daily for adequate hydration.",
+            "source": "https://www.cdc.gov/healthyweight/healthy_eating/water-and-healthier-drinks.html"
+          },
+          {
+            "question": "Which of the following is a sign of dehydration?",
+            "options": [
+              "Clear urine",
+              "Dry mouth and dizziness",
+              "Feeling full",
+              "High energy levels"
+            ],
+            "correctAnswer": "Dry mouth and dizziness",
+            "explanation": "Common signs of dehydration include dry mouth, dizziness, and dark urine.",
+            "source": "https://www.nhs.uk/conditions/dehydration/"
+          }
+        ]
+      },
+      {
+        "id": "exercise-101",
+        "name": "Exercise",
+        "category": "Physical Activity",
+        "description": "Learn about different types of exercise and their benefits",
+        "difficulty": "medium",
+        "imageKey": "fitness",
+        "questions": [
+          {
+            "question": "Which of the following is considered aerobic exercise?",
+            "options": [
+              "Weightlifting",
+              "Sprinting",
+              "Yoga",
+              "Swimming"
+            ],
+            "correctAnswer": "Swimming",
+            "explanation": "Aerobic exercises improve cardiovascular health, and swimming is one of the best examples.",
+            "source": "https://www.heart.org/en/healthy-living/fitness/fitness-basics/aerobic-exercise"
+          },
+          {
+            "question": "How often should adults exercise per week, according to health experts?",
+            "options": [
+              "Once a week",
+              "Every day",
+              "At least 150 minutes per week",
+              "Only on weekends"
+            ],
+            "correctAnswer": "At least 150 minutes per week",
+            "explanation": "Experts recommend at least 150 minutes of moderate-intensity aerobic activity per week.",
+            "source": "https://www.cdc.gov/physicalactivity/basics/adults/index.htm"
+          }
+        ]
+      },
+      {
+        "id": "healthy-habits-101",
+        "name": "Healthy Habits",
+        "category": "Lifestyle",
+        "description": "Discover the daily habits that contribute to overall health and wellbeing",
+        "difficulty": "easy",
+        "imageKey": "leaf",
+        "questions": [
+          {
+            "question": "Which habit is NOT healthy?",
+            "options": [
+              "Smoking occasionally",
+              "Drinking plenty of water",
+              "Sleeping 8 hours a night",
+              "Exercising regularly"
+            ],
+            "correctAnswer": "Smoking occasionally",
+            "explanation": "Even occasional smoking is harmful to health and increases risk of disease.",
+            "source": "https://www.who.int/news-room/fact-sheets/detail/tobacco"
+          },
+          {
+            "question": "What can help reduce stress levels?",
+            "options": [
+              "Eating more sugar",
+              "Avoiding sleep",
+              "Regular physical activity",
+              "Working overtime"
+            ],
+            "correctAnswer": "Regular physical activity",
+            "explanation": "Exercise releases endorphins, which naturally reduce stress.",
+            "source": "https://www.mayoclinic.org/healthy-lifestyle/stress-management/in-depth/exercise-and-stress/art-20044469"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -15,8 +15,8 @@ export function ReviewResult({ reviewData }) {
   };
   
   const renderProgressBar = (label, percentage) => {
-    const barColor = percentage >= 80 ? "bg-green-500" : 
-                     percentage >= 60 ? "bg-yellow-500" : 
+    const barColor = Number(percentage) >= 80 ? "bg-green-500" : 
+                     Number(percentage) >= 60 ? "bg-yellow-500" : 
                      "bg-red-500";
     
     return (
