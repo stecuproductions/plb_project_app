@@ -5,6 +5,7 @@ import { SafeAreaView, ScrollView, StatusBar, Text, TouchableOpacity, View } fro
 import { loadCompletedQuizzes, toggleQuizCompletion } from '../scripts/quizStorage';
 
 export default function QuizDetailPage() {
+    
   const router = useRouter();
   const { id } = useLocalSearchParams();
   const [quizRound, setQuizRound] = useState(null);

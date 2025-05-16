@@ -3,7 +3,7 @@ import React from 'react';
 import { CustomTabBar } from '../../components/ui/CustomTabBar';
 
 // Export API URL for use in other components
-export const API_URL = 'http://localhost:3000';
+export const API_URL = 'https://plbprojectapp-production.up.railway.app'; 
 
 export default function TabLayout() {
   return (
@@ -35,6 +35,7 @@ export default function TabLayout() {
         name="QuizPage"
         options={{
           title: 'Quizzes',
+          headerShown:false,
         }}
       />
     </Tabs>

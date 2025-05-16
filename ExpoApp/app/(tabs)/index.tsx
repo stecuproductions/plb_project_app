@@ -1,12 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { SafeAreaView, ScrollView, Text, View } from 'react-native';
+import { useRouter } from 'expo-router';
 
 import { FactOfTheDay } from '@/components/homePageComponents/FactOfTheDay';
 import { NavigationCard } from '@/components/homePageComponents/NavigationCard';
-import { StreakInfo } from '@/components/homePageComponents/StreakInfo';
+import { CompletedQuizzes } from '@/components/homePageComponents/CompletedQuizzes';
 
 export default function HomeScreen() {
+  const router = useRouter();
+  
   return (
     <SafeAreaView className="flex-1 bg-primary-50">
       <StatusBar style="dark" />
@@ -21,9 +24,9 @@ export default function HomeScreen() {
         {/* Fact of the Day */}
         <FactOfTheDay />
         
-        {/* Streak Info */}
+        {/* Completed Quizzes */}
         <View className="my-4">
-          <StreakInfo />
+          <CompletedQuizzes/>
         </View>
         
         {/* Navigation Cards */}
@@ -33,19 +36,23 @@ export default function HomeScreen() {
             <NavigationCard 
               title="FoodFacts" 
               description="Learn about food" 
-              customClassName="w-[48%] mb-4" 
+              customClassName="w-[48%] mb-4"
+              icon="📚"
+              onPress={() => router.push('/(tabs)/FoodFacts')}
             />
             <NavigationCard 
               title="Quizzes" 
               description="Discover new content" 
-              customClassName="w-[48%] mb-4" 
+              customClassName="w-[48%] mb-4"
+              icon="🎯"
+              onPress={() => router.push('/(tabs)/QuizPage')}
             />
             <NavigationCard 
               title="Ai diet reviewer" 
               description="Get feedback on your diet using modern AI technology" 
               customClassName="w-full mb-4" 
-              icon = "🤖"
-
+              icon="🤖"
+              onPress={() => router.push('/(tabs)/AiReviewer')}
             />
             
           </View>

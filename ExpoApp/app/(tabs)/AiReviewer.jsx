@@ -2,17 +2,23 @@ import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 import { ActivityIndicator, SafeAreaView, ScrollView, Text, View, Alert } from "react-native";
 import axios from "axios";
+import { Ionicons } from '@expo/vector-icons';
 
 import { DietInputForm } from "../../components/aiReviewerComponents/DietInputForm";
 import { ReviewResult } from "../../components/aiReviewerComponents/ReviewResult";
 import { ReviewTips } from "../../components/aiReviewerComponents/ReviewTips";
+import { ReviewStats } from "../../components/aiReviewerComponents/ReviewStats";
+import { ReviewHistory } from "../../components/aiReviewerComponents/ReviewHistory";
 import { Button } from "../../components/ui/Buttons";
 import { API_URL } from "../_layout";
+import { saveDietReview, getReviewById } from "../../scripts/dietReviewStorage";
 
 export default function AiReviewer() {
   const [inputText, setInputText] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [reviewData, setReviewData] = useState(null);
+  const [statsUpdated, setStatsUpdated] = useState(false);
+  const [isHistoryReview, setIsHistoryReview] = useState(false);
 
   const handleSubmitDiet = async () => {
     const description = inputText.trim();
@@ -23,11 +29,13 @@ export default function AiReviewer() {
     }
 
     setIsLoading(true);
+    setStatsUpdated(false);
 
     try {
       const response = await axios.post(`${API_URL}/ai/getDietReview`, { description });
 
       const data = response.data;
+      console.log("fetching");
       if (!data || Object.keys(data).length === 0) {
         alert( "The AI could not analyze your diet, describe it more precisely or please try again.");
         setIsLoading(false);
@@ -36,6 +44,9 @@ export default function AiReviewer() {
         return;
       }
 
+      // Save the review data to AsyncStorage
+      await saveDietReview(data);
+      setStatsUpdated(true);
       setReviewData(data);
 
     } catch (error) {
@@ -57,6 +68,23 @@ export default function AiReviewer() {
 
   const handleNewReview = () => {
     setReviewData(null);
+    setIsHistoryReview(false);
+  };
+  
+  const handleReviewSelect = async (review) => {
+    setIsLoading(true);
+    try {
+      const selectedReview = await getReviewById(review.id);
+      if (selectedReview) {
+        setReviewData(selectedReview);
+        setIsHistoryReview(true);
+      }
+    } catch (error) {
+      console.error("Error loading review:", error);
+      Alert.alert("Error", "Couldn't load the selected review");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -71,9 +99,15 @@ export default function AiReviewer() {
             Enter what you&apos;ve eaten today to get personalized feedback and recommendations.
           </Text>
           
-          <Text className="text-xs text-neutral-500 italic mb-8">
+          <Text className="text-xs text-neutral-500 italic mb-3">
             Note: AI-generated advice should not replace professional nutritional guidance. Results may vary in accuracy.
           </Text>
+          
+          {/* Display the user's review statistics */}
+          <ReviewStats forceRefresh={statsUpdated} />
+          
+          {/* Display review history */}
+          <ReviewHistory onReviewSelect={handleReviewSelect} forceRefresh={statsUpdated} />
 
           {!reviewData && (
             <DietInputForm
@@ -95,6 +129,14 @@ export default function AiReviewer() {
 
           {!isLoading && reviewData && (
             <View className="mt-6">
+              {isHistoryReview && (
+                <View className="mb-4 px-3 py-2 bg-amber-100 rounded-lg flex-row items-center">
+                  <Ionicons name="time-outline" size={18} color="#b45309" />
+                  <Text className="text-amber-800 ml-2 text-sm">
+                    Viewing historical review from {new Date(reviewData.timestamp).toLocaleDateString('en-US')}
+                  </Text>
+                </View>
+              )}
               <ReviewResult reviewData={reviewData} />
               <ReviewTips reviewData={reviewData} />
               <View className="mt-6">

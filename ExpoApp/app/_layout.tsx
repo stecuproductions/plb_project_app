@@ -6,7 +6,8 @@ import '../global.css';
 export const API_URL = 'http://localhost:3000'; 
 
 export default function RootLayout() {
-  const [fontsLoaded] = useFonts({
+  // Load fonts
+  useFonts({
     'Inter': require('../assets/fonts/Inter-VariableFont_opsz,wght.ttf'),
   });
   return (
@@ -14,6 +15,8 @@ export default function RootLayout() {
       <StatusBar hidden={true} />
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="QuizDetailPage" options={{ headerShown: false }} />
+        <Stack.Screen name="QuizGameplay" options={{ headerShown: false }} />
       </Stack>
       <StatusBar style="auto" />
     </>
