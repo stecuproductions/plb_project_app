@@ -3,7 +3,7 @@ import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import '../global.css';
 
-export const API_URL = 'http://localhost:3000'; 
+export const API_URL = 'https://plbprojectapp-production.up.railway.app'; 
 
 export default function RootLayout() {
   // Load fonts

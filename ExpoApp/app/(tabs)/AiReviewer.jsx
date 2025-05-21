@@ -35,7 +35,6 @@ export default function AiReviewer() {
       const response = await axios.post(`${API_URL}/ai/getDietReview`, { description });
 
       const data = response.data;
-      console.log("fetching");
       if (!data || Object.keys(data).length === 0) {
         alert( "The AI could not analyze your diet, describe it more precisely or please try again.");
         setIsLoading(false);
